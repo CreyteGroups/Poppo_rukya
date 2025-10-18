@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rukya Alo | Premium Poppo Live Agent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --secondary: #7209b7;
+            --accent: #4cc9f0;
+            --dark: #1d3557;
+            --light: #f1faee;
+            --gray: #f8f9fa;
+            --text: #1d3557;
+            --success: #2ec4b6;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,218.7C960,213,1056,235,1152,250.7C1248,267,1344,277,1392,282.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .language-btn:hover, .language-btn.active {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title {
+            font-family: "Poppins", sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            border: 1px solid rgba(67, 97, 238, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        /* Steps */
+/* Video Tutorial Section */
+#tutorial {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.tutorial-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tutorial-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(67, 97, 238, 0.1);
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tutorial-header {
+    padding: 30px 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    position: relative;
+}
+
+.tutorial-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,218.7C960,213,1056,235,1152,250.7C1248,267,1344,277,1392,282.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.tutorial-header h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    z-index: 2;
+}
+
+.tutorial-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
+
+.tutorial-badge i {
+    font-size: 1.1rem;
+}
+
+/* Video Container */
+.video-container {
+    padding: 0;
+    position: relative;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #000;
+    overflow: hidden;
+}
+
+.tutorial-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: var(--transition);
+}
+
+.tutorial-video[poster]+.video-overlay {
+    opacity: 1;
+}
+
+.tutorial-video:playing+.video-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.4);
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(67, 97, 238, 0.6);
+}
+
+/* Tutorial Content */
+.tutorial-content {
+    padding: 30px;
+}
+
+.tutorial-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: var(--gray);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.step-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.step-text {
+    flex: 1;
+}
+
+.step-text strong {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.step-text span {
+    color: var(--dark);
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tutorial-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tutorial-actions .btn {
+    min-width: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tutorial-header {
+        padding: 25px 20px 15px;
+    }
+    
+    .tutorial-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .tutorial-content {
+        padding: 25px 20px;
+    }
+    
+    .step-item {
+        padding: 15px;
+    }
+    
+    .step-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .tutorial-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tutorial-actions .btn {
+        min-width: 100%;
+        justify-content: center;
+    }
+    
+    .play-button {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorial-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .step-icon {
+        align-self: center;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+}
+
+/* Video Controls Enhancement */
+.tutorial-video::-webkit-media-controls-panel {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.tutorial-video::-webkit-media-controls-play-button {
+    background-color: white;
+    border-radius: 50%;
+}
+
+.tutorial-video::-webkit-media-controls-current-time-display,
+.tutorial-video::-webkit-media-controls-time-remaining-display {
+    color: white;
+}
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #5d3ad6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 25px;
+            border-radius: 16px;
+            background: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--dark);
+            opacity: 0.8;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 16px;
+            background: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(67, 97, 238, 0.1);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .contact-details a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%234361ee' fill-opacity='0.1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,218.7C960,213,1056,235,1152,250.7C1248,267,1344,277,1392,282.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-logo {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            display: block;
+            padding: 8px 0;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .footer-links a::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 25px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Custom Template Section */
+        .custom-template {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .custom-template::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,218.7C960,213,1056,235,1152,250.7C1248,267,1344,277,1392,282.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .template-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .language-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-5 {
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content animate">
+                <h1 class="translatable" data-en="Maximize Your Earning Potential with Poppo Live." data-am="በፖፖ ላይቭ የገቢ እድልዎን ይክፈቱ">
+                    Maximize Your Earning Potential with Poppo Live.
+                </h1>
+                <p class="translatable" data-en="Join Agent Rukya Ali's team and start earning $10+ daily with flexible hours" data-am="ከኤጀንት ሩቅያ አሊ ጋር ተቀላቀሉ እና በቀላል ሰዓት በቀን ከ10 ዶላር በላይ ያግኙ">
+                    Join Agent Rukya Ali's team and start earning $10+ daily with flexible hours
+                </p>
+
+                <div class="language-switcher">
+                    <button class="language-btn active" data-lang="en">English</button>
+                    <button class="language-btn" data-lang="am">Amharic</button>
+                </div>
+
+                <a href="#steps" class="btn btn-primary animate delay-1">
+                    <i class="fas fa-play-circle"></i>
+                    <span class="translatable" data-en="Get Started Now" data-am="አሁን ይጀምሩ">Get Started Now</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="container" id="story">
+        <div class="section-header animate" style="margin-top: 60px">
+            <h2 class="section-title translatable" data-en="Why Choose Poppo Live?" data-am="ለምን ፖፖ ላይቭ መምረጥ ይገባል?">Why Choose Poppo Live?</h2>
+            <p class="section-subtitle translatable" data-en="Discover the benefits of joining our team" data-am="በቡድናችን ውስጥ የመሳተፍ ጥቅሞች">Discover the benefits of joining our team</p>
+        </div>
+
+        <div class="card animate delay-1">
+            <p class="translatable" data-en="Hello, I'm Agent Rukya Ali. In just few months  working with Poppo Live, I've built a steady income stream earning over $10 daily. The best part? You can do it too!" data-am="ሰላም፣ እኔ ኤጀንት ሩቅያ አሊ ነኝ። ከፖፖ ላይቭ ላይ ለአጭር ጊዜ ብቻ በመስራት በቀን 10 ዶላር በላይ የሆነ የቋሚ ገቢ ምንጭ ፈጥሬያለሁ። ምርጡ ክፍል? እርስዎም ማድረግ ይችላሉ!">
+                Hello, I'm Agent Rukya Ali. In just few months  working with Poppo Live, I've built a steady income stream earning over $10 daily. The best part? You can do it too!
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card animate delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="translatable" data-en="No Education Required" data-am="ትምህርት አያስፈልግም">No Education Required</h3>
+                    <p class="translatable" data-en="Anyone can succeed regardless of educational background" data-am="ማንኛውም ሰው የትምህርት ደረጃ ሳይገድበው መስራት ይችላል">
+                        Anyone can succeed regardless of educational background
+                    </p>
+                </div>
+
+                <div class="feature-card animate delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="translatable" data-en="Engaging Features" data-am="ማራኪ ባህሪያት">Engaging Features</h3>
+                    <p class="translatable" data-en="From themed rooms, games, and events to special live contests and leaderboards and more" data-am="ከተለያዩ ክፍሎች፣ ጨዋታዎች እና ዝግጅቶች እስከ ልዩ ቀጥታ ውድድሮች እና አለቆች �ሰሌዳ ድረስ">
+                        From themed rooms, games, and events to special live contests and leaderboards and more
+                    </p>
+                </div>
+
+                <div class="feature-card animate delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3 class="translatable" data-en="Global Community" data-am="ዓለም አቀፍ ማህበረሰብ">Global Community</h3>
+                    <p class="translatable" data-en="Connect with people worldwide in your native language" data-am="በማንኛውም ቋንቋ ከዓለም ዙሪያ ከሚገኙ ሰዎች ጋር ይገናኛሉ">
+                        Connect with people worldwide in your native language
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Video Tutorial Section -->
+<section id="tutorial">
+    <div class="container">
+        <div class="section-header animate">
+            <h2 class="section-title translatable" data-en="Step-by-Step Video Tutorial" data-am="ደረጃ በደረጃ የቪዲዮ መመርያ">Step-by-Step Video Tutorial</h2>
+            <p class="section-subtitle translatable" data-en="Watch this complete guide to get started with Poppo Live" data-am="በፖፖ ላይቭ ለመጀመር ይህንን ሙሉ መመርያ ይመልከቱ">Watch this complete guide to get started with Poppo Live</p>
+        </div>
+        
+        <div class="tutorial-container">
+            <div class="tutorial-card animate delay-1">
+                <div class="tutorial-header">
+                    <div class="tutorial-badge">
+                        <i class="fas fa-play-circle"></i>
+                        <span class="translatable" data-en="Complete Guide" data-am="ሙሉ መመርያ">Complete Guide</span>
+                    </div>
+                    <h3 class="translatable" data-en="Poppo Live Full Setup Tutorial" data-am="ፖፖ ላይቭ ሙሉ ለማስጀመር መመርያ">Poppo Live Full Setup Tutorial</h3>
+                </div>
+                
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <video class="tutorial-video" controls poster="tutorial-thumbnail.jpg">
+                            <source src="poppo-tutorial.mp4" type="rukya/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-steps">
+                        <div class="step-item">
+                            <div class="step-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <div class="step-text">
+                                <strong class="translatable" data-en="Download App" data-am="መተግበሪያውን ያውርዱ">Download App</strong>
+                                <span class="translatable" data-en="Get the Poppo Live app from official source" data-am="ፖፖ ላይቭ መተግበሪያውን ዋናው ምንጭ ያግኙ">Get the Poppo Live app from official source</span>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="step-text">
+                                <strong class="translatable" data-en="Create Account" data-am="አካውንት ይፍጠሩ">Create Account</strong>
+                                <span class="translatable" data-en="Set up your profile with verification" data-am="መለያዎን በማረጋገጫ ይደግፉ">Set up your profile with verification</span>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="step-text">
+                                <strong class="translatable" data-en="Join Agency" data-am="ኤጀንሲውን ይቀላቀሉ">Join Agency</strong>
+                                <span class="translatable" data-en="Enter agent ID to start earning" data-am="ገቢ ማግኘትን ለመጀመር የኤጀንት መለያ ቁጥር 31067032 ያስገቡ">Enter agent ID 31067032 to start earning</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-actions">
+                        <a href="https://joinluvlive.com/r5DwMR" class="btn btn-primary">
+                            <i class="fas fa-download"></i>
+                            <span class="translatable" data-en="Download Poppo Live" data-am="ፖፖ ላይቭ ያውርዱ">Download Poppo Live</span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </section>
+
+    <!-- Become Agent Section -->
+<!--     <section id="agent">
+    <div class="container">
+        <div class="section-header animate">
+            <h2 class="section-title translatable" data-en="Become a Direct Agent" data-am="ቀጥታ ኤጀንት ይሁኑ">Become a Direct Agent</h2>
+            <p class="section-subtitle translatable" data-en="Build your own team and earn commissions" data-am="የራስዎን ቡድን ይገንቡ እና ኮሚሽን ያግኙ">
+                Build your own team and earn commissions
+            </p>
+        </div>
+
+        <div class="card animate delay-1">
+            <p class="translatable" data-en="Want to build your own team and earn commissions? Follow these steps to become a direct agent:" data-am="የራስዎን ቡድን መገንባት እና ኮሚሽን ለማግኘት ይፈልጋሉ? ቀጥታ ኤጀንት ለመሆን እነዚህን ደረጃዎች ይከተሉ:">
+                Want to build your own team and earn commissions? Follow these steps to become a direct agent:
+            </p>
+
+            <ol style="margin: 25px 0 25px 25px; padding-left: 20px;">
+                <li class="translatable" data-en="Copy your Poppo ID from your profile" data-am="የፖፖ መለያ ቁጥርዎን ኮፒ አድርጉ">
+                    Copy your Poppo ID from your profile
+                </li>
+                <li class="translatable" data-en="Click our Agency Registration Link" data-am="የእኛን Agency Registration Link ይንኩ">
+                    Click our <a href="#" style="font-weight: 600">Agency Registration Link</a>
+                </li>
+                <li class="translatable" data-en='Enter your ID and tap "Get"' data-am='መለያ ቁጥርዎን ያስገቡ እና "Get" የሚለውን ይንኩ'>
+                    Enter your ID and tap "Get"
+                </li>
+                <li class="translatable" data-en="Enter the verification code and submit" data-am="የማረጋገጫ ኮዱን ያስገቡ እና ይላኩት">
+                    Enter the verification code and submit
+                </li>
+            </ol>
+
+            <div class="step-image" style="max-width: 500px; margin: 20px auto;"><img src="ali-yemegbalet-photo.jpg" alt="Agent registration"></div>
+
+            <a href="https://h5.vshowapi.com/guild/agency_invite/register?c=poppo&temp_id=108151&inviter_id=63082082&temp_type=2" class="btn btn-primary">
+                <i class="fas fa-user-tie"></i>
+                <span class="translatable" data-en="Register as Agent" data-am="እንደ ኤጀንት ይመዝገቡ">Register as Agent</span>
+            </a>
+        </div>
+    </div>
+</section> -->
+
+    <!-- Contact Section -->
+    <section class="container">
+        <div class="section-header animate">
+            <h2 class="section-title translatable" data-en="Contact Me" data-am="እኔን ለማግኘት">Contact Me</h2>
+            <p class="section-subtitle translatable" data-en="Have questions? Reach out through any of these channels" data-am="ጥያቄዎች አሉዎት? በእነዚህ ማናቸውም መንገዶች ያግኙኝ">
+                Have questions? Reach out through any of these channels
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="animate delay-1">
+                <div class="card">
+                    <h3 class="translatable" data-en="Get Personalized Support" data-am="ድጋፍ ያግኙ">Get Personalized Support</h3>
+                    <p class="translatable" data-en="I'm here to help you succeed with Poppo Live. Contact me directly for one-on-one assistance with setup or any questions." data-am="እናንተን ለመርዳት እዚህ አለሁኝ። ማንኛውም ጥያቄ ካላችሁ በነዚ መንገዶች ያግኙኝ።">
+                        I'm here to help you succeed with Poppo Live. Contact me directly for one-on-one assistance with setup or any questions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="animate delay-2">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="translatable" data-en="Phone" data-am="ስልክ">Phone</h4>
+                            <a href="tel:+971567833969" target="_blank">+971567833969</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="translatable" data-en="Telegram" data-am="ቴሌግራም">Telegram</h4>
+                            <a href="https://t.me/Ruki121" target="_blank">@Rukya_Telegram</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="translatable" data-en="Telegram channel" data-am="የቴሌግራም ቻናል">Telegram channel</h4>
+                            <a href="https://t.me/POPDisc" target="_blank">@Rukya_Agency</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method"style="margin-bottom: 40px" >
+                        <div class="contact-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="translatable" data-en="TikTok" data-am="ቲክቶክ">TikTok</h4>
+                            <a href="https://www.tiktok.com/@rukya.ali3" target="_blank">Rukya TikTok</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Template Section -->
+    <section class="container" id="reyan" style="margin-bottom: 40px;">
+        <div class="custom-template animate">
+            <div class="template-content">
+                <h2 class="section-title" style="color: white; margin-bottom: 20px;" data-en="እንደዚህ ድህረገፅ ማሰራት ይፈልጋሉ" data-am="እንደዚህ ድህረገፅ ማሰራት ይፈልጋሉ">
+                    Custom Template Service እንደዚህ ድህረገፅ ማሰራት ይፈልጋሉ
+                </h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 25px;" class="translatable" data-en="We can design a custom template with your name, photo, and social links to help you recruit more agents." data-am="ይህን መሰል ስሞትን, አካውንቶን እና ሌሎች ነገሮችን የሚያካትት ድረ ገፅ ማሰራት የምትፈልጉ ከሆነ ከታች ያለውን ይጫኑ::">
+                    We can design a custom template with your name, photo, and social links to help you recruit more agents.
+                </p>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://t.me/Reyanmaru" class="btn btn-outline" target="_blank" style="background: rgba(255,255,255,0.15); border-color: white; color: white;">
+                        <i class="fab fa-telegram"></i>
+                        <span class="translatable" data-en="Contact on Telegram" data-am="በቴሌግራም ያግኙን">Contact on Telegram</span>
+                    </a>
+<!--                     <a href="https://popposite.netlify.app/" class="btn btn-primary">
+    <i class="fas fa-globe"></i>
+    <span class="translatable" data-en="Our Website" data-am="የኛ ድህረ ገጽ">Our Website</span>
+</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Rukya <span>Ali</span></div>
+                    <p class="translatable" data-en="Helping you maximize your earnings with Poppo Live" data-am="በፖፖ ላይቭ ገቢዎን ከፍ ለማድረግ እዚህ አለን">
+                        Helping you maximize your earnings with Poppo Live
+                    </p>
+                    <div class="social-links">
+                        <a href="https://t.me/Ruki121" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.tiktok.com/@rukya.ali3" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="tel:+971567833969" class="social-link" target="_blank"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="translatable" data-en="Quick Links" data-am="ፈጣን አገናኞች">Quick Links</h3>
+                    <ul>
+                        <li><a href="#tutorial" class="translatable" data-en="Step-by-Step Guide" data-am="ደረጃ በደረጃ መመሪያ">Step-by-Step Guide</a></li>
+
+                        <li><a href="#story" class="translatable" data-en="Success Stories" data-am="የዕድለኞች ታሪኮች">Success Stories</a></li>
+                        <li><a href="#reyan" class="translatable" data-en="Website Creation" data-am="ድረ-ገጽ መፍጠር">Website Creation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="translatable" data-en="Resources" data-am="ሀብቶች">Resources</h3>
+                    <ul>
+                        <li><a href="https://joinluvlive.com/r5DwMR" class="translatable" data-en="Download App" data-am="መተግበሪያ ያውርዱ">Download App</a></li>
+                        <li><a href="https://t.me/POPDisc" class="translatable" data-en="Telegram Channel" data-am="ቴሌግራም ቻናል" target=_blank">Telegram Channel</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p class="translatable" data-en="Made in Ethiopia 🇪🇹" data-am="በኢትዮጵያ የተሰራ 🇪🇹">Made in Ethiopia 🇪🇹</p>
+                <p>Created by Popposite Website Building Agency | © 2025 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute("href"));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                    }
+                });
+            });
+
+            // Language switcher functionality
+            const languageBtns = document.querySelectorAll(".language-btn");
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            // Function to switch language
+            function switchLanguage(lang) {
+                // Update all translatable elements
+                document.querySelectorAll(".translatable").forEach(element => {
+                    if (element.dataset[lang]) {
+                        element.textContent = element.dataset[lang];
+                    }
+                });
+
+                // Update active button
+                languageBtns.forEach(btn => {
+                    if (btn.dataset.lang === lang) {
+                        btn.classList.add("active");
+                    } else {
+                        btn.classList.remove("active");
+                    }
+                });
+
+                // Store language preference
+                localStorage.setItem("preferredLanguage", lang);
+            }
+
+            // Button click handlers
+            languageBtns.forEach(btn => {
+                btn.addEventListener("click", function () {
+                    switchLanguage(this.dataset.lang);
+                });
+            });
+
+            // Check for saved language preference
+            const savedLang = localStorage.getItem("preferredLanguage");
+            if (savedLang && savedLang !== "en") {
+                switchLanguage(savedLang);
+            }
+
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements that should animate
+            document.querySelectorAll(".section-header, .card, .contact-grid > div").forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
